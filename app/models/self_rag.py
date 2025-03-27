@@ -288,3 +288,11 @@ class SelfRAG:
             result = list(output.values())[-1]
         
         return result
+        
+    def get_workflow_graph(self):
+        """Get the workflow graph for visualization.
+        
+        Returns:
+            The compiled graph object that can be used for visualization.
+        """
+        return self.app

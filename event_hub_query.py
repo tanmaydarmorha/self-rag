@@ -47,22 +47,7 @@ def query_event_hub_docs(pdf_path, question):
         
         print("\nFinal Answer:")
         print(result.get("generation", "No answer generated"))
-        
-        print("\nRelevant Sources:")
-        if "documents" in result:
-            relevant_count = 0
-            for i, doc in enumerate(result["documents"]):
-                if doc.get("relevant", False):
-                    relevant_count += 1
-                    print(f"\nSource {relevant_count}:")
-                    # Print a shorter snippet to avoid overwhelming output
-                    content = doc["page_content"]
-                    if len(content) > 300:
-                        content = content[:300] + "..."
-                    print(content)
-            
-            if relevant_count == 0:
-                print("No relevant sources found.")
+
         
         return result
     
