@@ -1,12 +1,12 @@
 import os
 from typing import List, Dict, Any
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import OllamaEmbeddings
 
 # Use nomic-embed-text as specified in the project requirements
 def get_embeddings_model():
     """Get the embeddings model."""
-    return HuggingFaceEmbeddings(model_name="nomic-ai/nomic-embed-text-v1")
+    return OllamaEmbeddings(model="nomic-embed-text:latest")
 
 def create_vector_store(texts: List[str], metadatas: List[Dict[str, Any]] = None):
     """Create a vector store from texts and metadata."""
