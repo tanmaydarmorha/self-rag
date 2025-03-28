@@ -1,12 +1,12 @@
 import os
 from typing import List, Dict, Any
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_openai import OpenAIEmbeddings
 
-# Use nomic-embed-text as specified in the project requirements
+# Use text-embedding-3-small from OpenAI
 def get_embeddings_model():
     """Get the embeddings model."""
-    return OllamaEmbeddings(model="nomic-embed-text:latest")
+    return OpenAIEmbeddings(model="text-embedding-3-small")
 
 def create_vector_store(texts: List[str], metadatas: List[Dict[str, Any]] = None):
     """Create a vector store from texts and metadata."""
